@@ -14,9 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('status', 'PUBLISHED')->get();
+        $posts = Post::where('status', 'PUBLISHED')->simplePaginate(2);
 
-        return view('front.posts.index')->withPosts(['posts' => $posts]);
+        return view('front.posts.index')->with(['posts' => $posts]);
     }
 
     /**

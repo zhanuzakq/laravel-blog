@@ -15,9 +15,6 @@
             <a class="nav-link" href="{{url('about')}}">О нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('post')}}">Пост</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{url('contact')}}">Контакты</a>
           </li>
         </ul>

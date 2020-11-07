@@ -13,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    //Main Page with IndexController
     Route::get('/', 'IndexController@index');
 
+    //Route Post
     Route::view('post', 'front.post');
     Route::get('post/{slug}', 'PostController@show')->name('post.show');
+
+    //Static Views
+    Route::view('about', 'front.about');
+    Route::view('contact', 'front.contact');
 });
-
-
-
-Route::view('about', 'front.about');
-
-Route::view('contact', 'front.contact');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

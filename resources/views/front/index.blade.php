@@ -32,7 +32,12 @@
             
             <!-- Pager -->
             <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Пред &rarr;</a>
+            @if($posts->onFirstPage() || $posts->hasMorePages())
+            <a class="btn btn-primary float-right" href="?page={{$posts->currentPage()+1}}">Пред &rarr;</a>
+            @endif
+            @if(!$posts->onFirstPage())
+            <a class="btn btn-primary float-left" href="?page={{$posts->currentPage()-1}}">След &larr;</a>
+            @endif
             </div>
         </div>
         </div>
